@@ -43,9 +43,9 @@ function getComputerChoice() {
 //console.log(getPlayerChoice());
 
 let playerPlays = getPlayerChoice();
-//console.log("You Play: " + playerPlays);
+console.log("You Play: " + playerPlays);
 let computerPlays = getComputerChoice();
-//console.log("Computer Plays: " + computerPlays);
+console.log("Computer Plays: " + computerPlays);
 
 function playRound(playerPlays, computerPlays) {
   if (playerPlays === badChoice) {
@@ -69,16 +69,18 @@ function playRound(playerPlays, computerPlays) {
   } else if (playerPlays === aScissors && computerPlays === aPaper) {
     return win + "- SCISSORS cuts PAPER";
   }
+  
 }
-
-function game() {
-  for (let i = 0; i < 5; i++) {
-    getPlayerChoice();
-    getComputerChoice();
-    playRound();
-    console.log("You Play: " + playerPlays);
-    console.log("Computer Plays: " + computerPlays);
-    console.log(playRound(playerPlays, computerPlays));
-  }
-}
-game();
+console.log(playRound(playerPlays, computerPlays))
+ function game() {
+   for (let i = 0; i < 5; i++) {
+     
+     let playerPlays = getPlayerChoice();
+     let computerPlays = getComputerChoice();
+     playRound();
+     console.log("You Play: " + playerPlays);
+     console.log("Computer Plays: " + computerPlays);
+     console.log(playRound(playerPlays, computerPlays));
+   }
+ }
+ game(); 
