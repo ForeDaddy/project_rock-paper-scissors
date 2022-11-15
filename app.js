@@ -72,15 +72,20 @@ function playRound(playerPlays, computerPlays) {
   
 }
 console.log(playRound(playerPlays, computerPlays))
+console.log("get ready for the showdown")
+
+alert("Practice time is over. It's time for a 5 round showdown!");
+
  function game() {
    for (let i = 0; i < 5; i++) {
-     
+    console.log("             ");
      let playerPlays = getPlayerChoice();
      let computerPlays = getComputerChoice();
      playRound();
      console.log("You Play: " + playerPlays);
      console.log("Computer Plays: " + computerPlays);
      console.log(playRound(playerPlays, computerPlays));
+     console.log("           ");
    }
  }
  game(); 
