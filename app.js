@@ -45,4 +45,25 @@ console.log(playerPlays);
 let computerPlays = getComputerChoice(computerSelection);
 console.log(computerPlays);
 
-//function playRound()
+function playRound(playerPlays, computerPlays) {
+  if (playerPlays === aRock && computerPlays === aRock) {
+    return "It's a Tie! - Both Players Chose ROCK";
+  } else if (playerPlays === aRock && computerPlays === aPaper) {
+    return "You Lose! - PAPER Covers ROCK";
+  } else if (playerPlays === aRock && computerPlays === aScissors) {
+    return "You Win! - ROCK Smashes SCISSORS";
+  } else if (playerPlays === aPaper && computerPlays === aPaper) {
+    return "It's a Tie! - Both Players Chose PAPER";
+  } else if (playerPlays === aPaper && computerPlays === aScissors) {
+    return "You Lose! - SCISSORS cuts PAPER";
+  } else if (playerPlays === aPaper && computerPlays === aRock) {
+    return "You Win! - PAPER covers ROCK";
+  } else if (playerPlays === aScissors && computerPlays === aScissors) {
+    return "It's a Tie! - Both Players Chose SCISSORS";
+  } else if (playerPlays === aScissors && computerPlays === aRock) {
+    return "You Lose! - ROCK Smashes SCISSORS";
+  } else if (playerPlays === aScissors && computerPlays === aPaper) {
+    return "You Win! - SCISSORS cuts PAPER";
+  }
+}
+console.log(playRound(playerPlays, computerPlays));
