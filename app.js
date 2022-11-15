@@ -3,6 +3,7 @@
 const aRock = "ROCK";
 const aPaper = "PAPER";
 const aScissors = "SCISSORS";
+const badChoice =  "You Have Chosen Poorly!"
 
 
 //Get case insensitive user choice
@@ -46,7 +47,9 @@ let computerPlays = getComputerChoice(computerSelection);
 console.log(computerPlays);
 
 function playRound(playerPlays, computerPlays) {
-  if (playerPlays === aRock && computerPlays === aRock) {
+  if (playerPlays === badChoice) {
+    return "No Score - Try Again";
+  } else if (playerPlays === aRock && computerPlays === aRock) {
     return "It's a Tie! - Both Players Chose ROCK";
   } else if (playerPlays === aRock && computerPlays === aPaper) {
     return "You Lose! - PAPER Covers ROCK";
