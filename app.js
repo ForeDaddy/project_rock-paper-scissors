@@ -30,16 +30,16 @@ function getComputerChoice() {
   //Computer Randomly chooses Rock
   let computerSelection = Math.floor(Math.random() * 3);
   if (computerSelection === 0) {
-    return "ROCK"
+    return aRock;
   //Or Computer Randomly chooses Paper
   } else if (computerSelection === 1) {
-    return "PAPER"
+    return aPaper;
   //Or computer Randomly chooses Scissors
   } else if (computerSelection === 2) {
-    return "SCISSORS"
+    return aScissors;
   } 
 }
-console.log(getComputerChoice());
+//console.log(getComputerChoice());
 //console.log(getPlayerChoice());
 
 let playerPlays = getPlayerChoice();
