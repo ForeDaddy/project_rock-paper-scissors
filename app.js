@@ -1,15 +1,18 @@
 //Prompt for player choice
 
+const aRock = "ROCK";
+const aPaper = "PAPER";
+const aScissors = "SCISSORS";
 
 
-
-
+//Get case insensitive user choice
 function getPlayerChoice() {
   let playerChoice = prompt("Choose Rock, Paper, or Scissors", ).toUpperCase();
   console.log(playerChoice);
-  if (playerChoice != "ROCK") {
-    return "You Have Chosen Poorly!"
-  } else {
+ //edge case stop for non valid selection
+  if ([aRock, aPaper, aScissors].indexOf(playerChoice) === -1) {
+    return "You Have Chosen Poorly!";
+  }  else {
   return playerChoice;
   }
 }
