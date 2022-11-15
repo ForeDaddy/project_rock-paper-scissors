@@ -5,8 +5,13 @@
 
 
 function getPlayerChoice() {
-  let playerChoice = prompt("Choose Rock, Paper, or Scissors", );
+  let playerChoice = prompt("Choose Rock, Paper, or Scissors", ).toUpperCase();
+  console.log(playerChoice);
+  if (playerChoice != "ROCK") {
+    return "You Have Chosen Poorly!"
+  } else {
   return playerChoice;
+  }
 }
 console.log(getPlayerChoice());
 
