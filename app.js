@@ -25,13 +25,13 @@ console.log(computerSelection);
 function getComputerChoice(computerSelection) {
   //Computer Randomly chooses Rock
   if (computerSelection === 0) {
-    return "Rock"
+    return "ROCK"
   //Or Computer Randomly chooses Paper
   } else if (computerSelection === 1) {
-    return "Paper"
+    return "PAPER"
   //Or computer Randomly chooses Scissors
   } else if (computerSelection === 2) {
-    return "Scissors"
+    return "SCISSORS"
   } 
 }
 console.log(getComputerChoice(computerSelection));
