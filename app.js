@@ -8,6 +8,11 @@ const win = "You Win! ";
 const lose = "You Lose! ";
 const tie = "It's a Tie! ";
 const noGame = "You Have Chosen Poorly!";
+let computerSelection;
+
+
+
+
 
 //Get case insensitive user choice
 function getPlayerChoice() {
@@ -21,16 +26,9 @@ function getPlayerChoice() {
   }
 }
 
-
-function generateRandomNumber() {
- //Random number between 1 and 3
-  return Math.floor(Math.random() * 3);
-}
-let computerSelection = generateRandomNumber();
-
-
-function getComputerChoice(computerSelection) {
+function getComputerChoice() {
   //Computer Randomly chooses Rock
+  let computerSelection = Math.floor(Math.random() * 3);
   if (computerSelection === 0) {
     return "ROCK"
   //Or Computer Randomly chooses Paper
@@ -41,13 +39,13 @@ function getComputerChoice(computerSelection) {
     return "SCISSORS"
   } 
 }
-//console.log(getComputerChoice(computerSelection));
+console.log(getComputerChoice());
 //console.log(getPlayerChoice());
 
 let playerPlays = getPlayerChoice();
-console.log("You Play: " + playerPlays);
-let computerPlays = getComputerChoice(computerSelection);
-console.log("Computer Plays: " + computerPlays);
+//console.log("You Play: " + playerPlays);
+let computerPlays = getComputerChoice();
+//console.log("Computer Plays: " + computerPlays);
 
 function playRound(playerPlays, computerPlays) {
   if (playerPlays === badChoice) {
@@ -72,4 +70,15 @@ function playRound(playerPlays, computerPlays) {
     return win + "- SCISSORS cuts PAPER";
   }
 }
-console.log(playRound(playerPlays, computerPlays));
+
+function game() {
+  for (let i = 0; i < 5; i++) {
+    getPlayerChoice();
+    getComputerChoice();
+    playRound();
+    console.log("You Play: " + playerPlays);
+    console.log("Computer Plays: " + computerPlays);
+    console.log(playRound(playerPlays, computerPlays));
+  }
+}
+game();
