@@ -1,10 +1,13 @@
-//Prompt for player choice
+
 
 const aRock = "ROCK";
 const aPaper = "PAPER";
 const aScissors = "SCISSORS";
-const badChoice =  "You Have Chosen Poorly!"
-
+const badChoice =  "You Have Chosen Poorly!";
+const win = "You Win! ";
+const lose = "You Lose! ";
+const tie = "It's a Tie! ";
+const noGame = "You Have Chosen Poorly!";
 
 //Get case insensitive user choice
 function getPlayerChoice() {
@@ -12,7 +15,7 @@ function getPlayerChoice() {
   
  //edge case stop for non valid selection
   if ([aRock, aPaper, aScissors].indexOf(playerChoice) === -1) {
-    return "You Have Chosen Poorly!";
+    return noGame;
   }  else {
   return playerChoice;
   }
@@ -42,31 +45,31 @@ function getComputerChoice(computerSelection) {
 //console.log(getPlayerChoice());
 
 let playerPlays = getPlayerChoice();
-console.log(playerPlays);
+console.log("You Play: " + playerPlays);
 let computerPlays = getComputerChoice(computerSelection);
-console.log(computerPlays);
+console.log("Computer Plays: " + computerPlays);
 
 function playRound(playerPlays, computerPlays) {
   if (playerPlays === badChoice) {
     return "No Score - Try Again";
   } else if (playerPlays === aRock && computerPlays === aRock) {
-    return "It's a Tie! - Both Players Chose ROCK";
+    return tie + "- Both Players Chose ROCK";
   } else if (playerPlays === aRock && computerPlays === aPaper) {
-    return "You Lose! - PAPER Covers ROCK";
+    return lose + "- PAPER Covers ROCK";
   } else if (playerPlays === aRock && computerPlays === aScissors) {
-    return "You Win! - ROCK Smashes SCISSORS";
+    return win + "- ROCK Smashes SCISSORS";
   } else if (playerPlays === aPaper && computerPlays === aPaper) {
-    return "It's a Tie! - Both Players Chose PAPER";
+    return tie + "- Both Players Chose PAPER";
   } else if (playerPlays === aPaper && computerPlays === aScissors) {
-    return "You Lose! - SCISSORS cuts PAPER";
+    return lose + "- SCISSORS cuts PAPER";
   } else if (playerPlays === aPaper && computerPlays === aRock) {
-    return "You Win! - PAPER covers ROCK";
+    return win + "- PAPER covers ROCK";
   } else if (playerPlays === aScissors && computerPlays === aScissors) {
-    return "It's a Tie! - Both Players Chose SCISSORS";
+    return tie + "- Both Players Chose SCISSORS";
   } else if (playerPlays === aScissors && computerPlays === aRock) {
-    return "You Lose! - ROCK Smashes SCISSORS";
+    return lose + "- ROCK Smashes SCISSORS";
   } else if (playerPlays === aScissors && computerPlays === aPaper) {
-    return "You Win! - SCISSORS cuts PAPER";
+    return win + "- SCISSORS cuts PAPER";
   }
 }
 console.log(playRound(playerPlays, computerPlays));
