@@ -8,6 +8,10 @@ console.log(computerSelection);
 function getComputerChoice(computerSelection) {
   if (computerSelection === 0) {
     return "Rock"
+  } else if (computerSelection === 1) {
+    return "Paper"
+  } else if (computerSelection === 2) {
+    return "Scissors"
   } 
 }
 console.log(getComputerChoice(computerSelection));
