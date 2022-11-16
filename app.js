@@ -76,16 +76,35 @@ console.log("get ready for the showdown")
 
 alert("Practice time is over. It's time for a 5 round showdown!");
 
+let playerScore = 0;
+let computerScore = 0;
+
  function game() {
    for (let i = 0; i < 5; i++) {
     console.log("             ");
      let playerPlays = getPlayerChoice();
      let computerPlays = getComputerChoice();
+
      playRound();
+       if (playRound(playerPlays, computerPlays).includes(win)) {
+        playerScore++;
+       }
+       if (playRound(playerPlays, computerPlays).includes(lose)) {
+        computerScore++;
+       }
      console.log("You Play: " + playerPlays);
      console.log("Computer Plays: " + computerPlays);
      console.log(playRound(playerPlays, computerPlays));
+     console.log("Your Score: " + playerScore + "  Computer's Score: " + computerScore)
      console.log("           ");
+   }
+   console.log("FINAL SCORE -- You: " + playerScore + "  Computer: " + computerScore);
+   if (playerScore > computerScore) {
+    console.log("YOU WIN! YOU ARE A BORN CHAMPION!")
+   } else if (playerScore < computerScore) {
+    console.log("YOU LOSE! YOU ARE HEREBY SHAMED");
+   } else if (playerScore === computerScore) {
+    console.log("IT'S A DRAW! HOW UNFORTUNATE FOR ALL INVOLVED");
    }
  }
  game(); 
